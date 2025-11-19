@@ -11,8 +11,14 @@ import {
 } from 'react-redux';
 
 import feedReducer from './slices/feedSlice';
+import ingredientsReducer from './slices/ingredientsSlice';
+import burgerReducer from './slices/constructorSlice'
 
-const rootReducer = combineReducers({feed: feedReducer}); // Заменить на импорт настоящего редьюсера
+const rootReducer = combineReducers({
+  feed: feedReducer,
+  ingredients: ingredientsReducer,
+  burgerConstructor: burgerReducer
+}); // Заменить на импорт настоящего редьюсера
 
 const store = configureStore({
   reducer: rootReducer,
