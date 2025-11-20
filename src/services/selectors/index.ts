@@ -11,3 +11,6 @@ export const selectIngredients = (state: RootState) => state.ingredients.items;
 export const selectIngredientsLoading = (state: RootState) => state.ingredients.loading;
 
 export const selectConstructorItems = (state: RootState) => state.burgerConstructor;
+
+export const selectProfileOrders = (state: RootState) => state.profileOrders.orders;
+export const selectProfileOrdersLoading = (state: RootState) => state.profileOrders.loading;

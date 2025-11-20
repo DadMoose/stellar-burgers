@@ -12,12 +12,14 @@ import {
 
 import feedReducer from './slices/feedSlice';
 import ingredientsReducer from './slices/ingredientsSlice';
-import burgerReducer from './slices/constructorSlice'
+import burgerReducer from './slices/constructorSlice';
+import profileOrderReducer from './slices/profileOrderSlice';
 
 const rootReducer = combineReducers({
   feed: feedReducer,
   ingredients: ingredientsReducer,
-  burgerConstructor: burgerReducer
+  burgerConstructor: burgerReducer,
+  profileOrders: profileOrderReducer,
 }); // Заменить на импорт настоящего редьюсера
 
 const store = configureStore({
