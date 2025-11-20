@@ -8,6 +8,7 @@ import burgerReducer from './slices/constructorSlice';
 import profileOrderReducer from './slices/profileOrderSlice';
 import orderReducer from './slices/orderSlice';
 import userReducer from './slices/userSlice';
+import orderDetailsReducer from './slices/orderDetailsSlice';
 
 const rootReducer = combineReducers({
   feed: feedReducer,
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
   burgerConstructor: burgerReducer,
   profileOrders: profileOrderReducer,
   order: orderReducer,
-  user: userReducer
+  user: userReducer,
+  orderDetails: orderDetailsReducer,
 }); // Заменить на импорт настоящего редьюсера
 
 const store = configureStore({

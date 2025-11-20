@@ -22,3 +22,6 @@ export const selectUserData = (state: RootState) => state.user.user;
 export const selectUserAuthError = (state: RootState) => state.user.authError;
 export const selectUpdateUserError = (state: RootState) => state.user.updateUserError;
 export const selectIsAuthChecked = (state: RootState) => state.user.isAuthChecked;
+
+export const selectOrderDetails = (state: RootState) => state.orderDetails.data;
+export const selectOrderDetailsLoading = (state: RootState) => state.orderDetails.loading;
