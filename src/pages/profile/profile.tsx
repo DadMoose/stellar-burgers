@@ -5,7 +5,6 @@ import { selectUpdateUserError, selectUserData } from '@selectors';
 import { updateUser } from '../../services/slices/userSlice';
 
 export const Profile: FC = () => {
-  /** TODO: взять переменную из стора */
   const dispatch = useDispatch();
   const user = useSelector(selectUserData);
   const updateUserError = useSelector(selectUpdateUserError);

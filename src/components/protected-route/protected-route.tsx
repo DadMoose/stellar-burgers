@@ -4,7 +4,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { Preloader } from '@ui';
 
 type ProtectedRouteProps = {
-  onlyUnAuth: boolean;
+  onlyUnAuth?: boolean;
   children: React.ReactElement;
 };
 
