@@ -33,7 +33,7 @@ export const Profile: FC = () => {
     const payload = {
       name: formValue.name,
       email: formValue.email,
-      ...(formValue.password ? {password: formValue.password} : {})
+      ...(formValue.password ? { password: formValue.password } : {})
     };
     dispatch(updateUser(payload));
   };

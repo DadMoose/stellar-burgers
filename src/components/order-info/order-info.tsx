@@ -18,7 +18,7 @@ import { useParams } from 'react-router-dom';
 export const OrderInfo: FC = () => {
   const { number } = useParams();
   const dispatch = useDispatch();
-  const orderData = useSelector(selectOrderDetails)
+  const orderData = useSelector(selectOrderDetails);
   const ingredients = useSelector(selectIngredients);
   const feedOrders = useSelector(selectFeedOrders);
   const profileOrders = useSelector(selectProfileOrders);

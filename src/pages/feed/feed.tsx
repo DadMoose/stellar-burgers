@@ -8,7 +8,7 @@ import { fetchFeed } from '../../services/slices/feedSlice';
 
 export const Feed: FC = () => {
   const dispatch = useDispatch();
-  const orders= useSelector(selectFeedOrders);
+  const orders = useSelector(selectFeedOrders);
   const loading = useSelector(selectFeedLoading);
 
   const handleGetFeeds = useCallback(() => {

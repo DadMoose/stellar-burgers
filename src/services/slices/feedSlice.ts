@@ -15,8 +15,8 @@ const initialState: FeedState = {
   total: 0,
   totalToday: 0,
   loading: false,
-  error: null,
-}
+  error: null
+};
 
 export const fetchFeed = createAsyncThunk<TOrdersData>(
   'fetch/feed',
@@ -29,20 +29,21 @@ const feedSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-    .addCase(fetchFeed.pending, (state) => {
-      state.loading = true;
-      state.error = null;
-    })
-    .addCase(fetchFeed.fulfilled, (state, action) => {
-      state.loading = false;
-      state.orders = action.payload.orders;
-      state.total = action.payload.total;
-      state.totalToday = action.payload.totalToday;
-    })
-    .addCase(fetchFeed.rejected, (state, action) => {
-      state.loading = false;
-      state.error = action.error.message || 'Не удалось загрузить ленту заказов';
-    })
+      .addCase(fetchFeed.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchFeed.fulfilled, (state, action) => {
+        state.loading = false;
+        state.orders = action.payload.orders;
+        state.total = action.payload.total;
+        state.totalToday = action.payload.totalToday;
+      })
+      .addCase(fetchFeed.rejected, (state, action) => {
+        state.loading = false;
+        state.error =
+          action.error.message || 'Не удалось загрузить ленту заказов';
+      });
   }
 });
 

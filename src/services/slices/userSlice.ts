@@ -103,16 +103,19 @@ export const updateUser = createAsyncThunk<
   }
 });
 
-export const chekUserAuth = createAsyncThunk('user/chek', async (_, { dispatch }) => {
-  if (localStorage.getItem('refreshToken')) {
-    try {
-      await dispatch(getUser()).unwrap();
-    } catch {
-      clearTokens();
+export const chekUserAuth = createAsyncThunk(
+  'user/chek',
+  async (_, { dispatch }) => {
+    if (localStorage.getItem('refreshToken')) {
+      try {
+        await dispatch(getUser()).unwrap();
+      } catch {
+        clearTokens();
+      }
     }
+    return true;
   }
-  return true;
-});
+);
 
 const userSlice = createSlice({
   name: 'user',

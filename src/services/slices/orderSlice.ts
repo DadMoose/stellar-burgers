@@ -51,20 +51,23 @@ const orderSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-    .addCase(createOrder.pending, (state) => {
-      state.orderRequest = true;
-      state.error = null;
-    })
-    .addCase(createOrder.fulfilled, (state, action) => {
-      state.orderRequest = false;
-      state.orderModalData = action.payload;
-    })
-    .addCase(createOrder.rejected, (state, action) => {
-      state.orderRequest = false;
-      state.error = action.payload as string || action.error.message || 'Не удалось оформить заказ';
-    })
+      .addCase(createOrder.pending, (state) => {
+        state.orderRequest = true;
+        state.error = null;
+      })
+      .addCase(createOrder.fulfilled, (state, action) => {
+        state.orderRequest = false;
+        state.orderModalData = action.payload;
+      })
+      .addCase(createOrder.rejected, (state, action) => {
+        state.orderRequest = false;
+        state.error =
+          (action.payload as string) ||
+          action.error.message ||
+          'Не удалось оформить заказ';
+      });
   }
 });
 
-export const {clearOrder} = orderSlice.actions;
+export const { clearOrder } = orderSlice.actions;
 export default orderSlice.reducer;
