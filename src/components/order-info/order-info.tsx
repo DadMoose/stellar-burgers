@@ -81,5 +81,17 @@ export const OrderInfo: FC = () => {
     return <Preloader />;
   }
 
-  return <OrderInfoUI orderInfo={orderInfo} />;
+  return (
+    <>
+      {number && (
+        <p
+          className='text text_type_digits-medium'
+          style={{ alignSelf: 'flex-start' }}
+        >
+          #{String(number).padStart(6, '0')}
+        </p>
+      )}
+      <OrderInfoUI orderInfo={orderInfo} />
+    </>
+  );
 };
