@@ -8,9 +8,8 @@ const mockUser: TUser = {
 
 describe('userSlice', () => {
   it('ставит request при login pending', () => {
-    let undefiend;
     const state = reducer(
-      undefiend,
+      undefined,
       loginUser.pending('', { email: '', password: '' })
     );
     expect(state.request).toBe(true);
